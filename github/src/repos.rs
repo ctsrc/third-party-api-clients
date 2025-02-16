@@ -8394,7 +8394,7 @@ impl Repos {
     pub async fn list_public(
         &self,
         since: i64,
-    ) -> ClientResult<crate::Response<Vec<crate::types::MinimalRepository>>> {
+    ) -> ClientResult<crate::Response<Vec<Option<crate::types::MinimalRepository>>>> {
         let mut query_args: Vec<(String, String)> = Default::default();
         if since > 0 {
             query_args.push(("since".to_string(), since.to_string()));
